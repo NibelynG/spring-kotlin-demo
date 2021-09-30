@@ -40,6 +40,8 @@ class MessageDbServiceTest {
         Assertions.assertEquals(2, dbService.findMessagesWithText(text).size)
         dbService.save(Message(text = text))
         Assertions.assertEquals(3, dbService.findMessagesWithText(text).size)
+        dbService.save(Message(text = "another text"))
+        Assertions.assertEquals(3, dbService.findMessagesWithText(text).size)
     }
 
 
